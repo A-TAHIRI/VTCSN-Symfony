@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Commande de trajet
+{% endblock %}
+
+{% block body %}
+
+	<section class="container">
+		<div class="row">
+
+			<div class="col-ms-12 col-md-5 col-lg-5" style="text-align:start">
+				<h2>New Commande</h2>
+				<a class="btn btn-primary btn-lg" href="{{path('passager_newCommand', {'id':app.user.id})}}">
+					Commande Trajet New</a>
+				<a class="btn btn-primary btn-lg" href="{{path('passager_command', {'id':app.user.id})}}">
+					Commande trajet after</a>
+				{{ form_start(rideForm) }}
+				{{ form_row(rideForm.location) }}
+				{{ form_row(rideForm.rendezVous) }}
+				{{ form_row(rideForm.destination) }}
+				{{ form_row(rideForm.rendez_vous_time) }}
+
+				<button type="submit" class="btn btn-primary btn-lg my-3">Envoyer</button>
+
+				{{ form_end(rideForm) }}
+
+			</div>
+			{# <div class="col-ms-12 col-md-5 col-lg-5" style="text-align:start">
+																									<h2>Cart</h2>
+																									<form action="#" method="post">
+																										<div>
+																											<label for="adresse">Adresse</label>
+																											<input class="form-control" type="text" name="adresse" id="adresse">
+																										</div>
+																										<div>
+																											<label for="cp">Code postal</label>
+																											<input class="form-control" type="text" name="cp" id="cp">
+																										</div>
+																										<div>
+																											<label for="ville">Ville</label>
+																											<input class="form-control" type="text" name="ville" id="ville">
+																										</div>
+																										<!-- Cette DIV affichera la carte -->
+																										<div id="Map"></div>
+																										<!-- Les champs ci-dessous afficheront la latitude et la longitude -->
+																										<div>
+																											<label for="lat">Latitude</label>
+																											<input class="form-control" type="text" name="lat" id="lat" readonly>
+																										</div>
+																										<div>
+																											<label for="lon">Longitude</label>
+																											<input class="form-control" type="text" name="lon" id="lon" readonly>
+																										</div>
+																										<button>Valider</button>
+																									</form>
+																								</div> #}
+		</div>
+	</section>
+
+{% endblock %}

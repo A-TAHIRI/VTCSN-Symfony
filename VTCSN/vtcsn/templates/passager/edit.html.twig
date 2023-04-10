@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier Chauffeur
+{% endblock %}
+
+{% block body %}
+
+	<section class="container" style="text-align:start;">
+		<div class="row">
+
+			<div class="col">
+
+				<h1>Modifier Chauffeur</h1>
+
+				{{ form_start(registrationForm) }}
+				<div class="mb-3">
+					<legend>Mon identité</legend>
+					{{ form_row(registrationForm.genre) }}
+					{{ form_row(registrationForm.name) }}
+					{{ form_row(registrationForm.surname) }}
+					{{ form_row(registrationForm.email) }}
+					{{ form_row(registrationForm.phoneNumber) }}
+
+				</div>
+				<div class="mb-3">
+					<legend>Mes coordonnées</legend>
+					{{ form_row(registrationForm.address) }}
+					{{ form_row(registrationForm.zipcode) }}
+					{{ form_row(registrationForm.city) }}
+
+
+					{{ form_row(registrationForm.plainPassword ) }}
+					{{ form_row(registrationForm.RGBDConsent) }}
+
+					<button type="submit" class="btn btn-primary btn-lg my-3">Mettre ajoure</button>
+					<a href="{{path('app_main')}}" class="btn btn-warning btn-lg my-3">Retour à l'accueil</a>
+					{{ form_end(registrationForm) }}
+
+
+				</div>
+
+
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

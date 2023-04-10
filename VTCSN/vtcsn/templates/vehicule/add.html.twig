@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Ajouter Votre Voiture
+{% endblock %}
+{% block body %}
+	<section class="container" style="text-align:start;">
+		<div class="row">
+
+			<div class="col-md-5">
+
+				<h1>Voiture</h1>
+
+				{{ form_start(vehiculeForm) }}
+				<div class="mb-3">
+					{{ form_row(vehiculeForm.typeVehicule) }}
+					{{ form_row(vehiculeForm.numberPlace) }}
+					{{ form_row(vehiculeForm.brand) }}
+					{{ form_row(vehiculeForm.model) }}
+					{{ form_row(vehiculeForm.color) }}
+					{{ form_row(vehiculeForm.energie) }}
+					{{ form_row(vehiculeForm.numberDoor) }}
+					{{ form_row(vehiculeForm.licensePlate) }}
+					{{ form_row(vehiculeForm.image ) }}
+
+
+					<button type="submit" class="btn btn-primary btn-lg my-3">Enregistrer</button>
+
+					{{ form_end(vehiculeForm) }}
+
+
+				</div>
+
+
+			</div>
+
+
+		</div>
+	</section>
+
+{% endblock %}

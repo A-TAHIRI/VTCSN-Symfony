@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>
+			{% block title %}Acceuil
+			{% endblock %}
+		</title>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"/>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css"/>
+		<link rel="shartcut icon" sizes="196x196" href="{{asset('assets/images/VTCSN2.png')}}" width="100px" higth="100px" type=" image/png"/>
+
+		<link
+		rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+		<!-- Bootstrap -->
+		<link href="{{asset('assets/css/animate.css')}}" rel="stylesheet">
+		<link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+		<link
+		href="{{asset('assets/css/profil.css')}}" rel="stylesheet">
+
+
+		<!-- Google Font Lato -->
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+		<link
+		rel="stylesheet" href="{{asset('assets/css/font-awesome.min.css')}}">
+
+
+		<!-- Plugin Styles -->
+		<link
+		href="{{asset('assets/css/datepicker.css" rel="stylesheet')}}">
+
+
+		<!-- Main Styles -->
+		<link href="{{asset('assets/css/styles-red.css')}}" rel="stylesheet">
+
+
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{('assets/images/apple-touch-icon-144-precomposed.png')}}">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{('assets/images/apple-touch-icon-114-precomposed.png')}}">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{('assets/images/apple-touch-icon-72-precomposed.png')}}">
+		<link rel="apple-touch-icon-precomposed" href="{{('assets/images/apple-touch-icon-57-precomposed.png')}}">
+		<link
+		rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}">
+
+		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+		<style>
+			#Map {
+				height: 400px;
+
+			}
+		</style>
+		<!-- Feuilles de styles -->
+		{% block stylesheets %}{% endblock %}
+
+		<!-- Fichiers JS -->
+		{% block javascripts %}{% endblock %}
+
+
+	</head>
+	<body>
+
+
+		{% include "_partials/_nav.html.twig" %}
+		{% include "_partials/_flach.html.twig" %}
+		{% block body %}{% endblock %}
+		{% if app.user %}
+			{% include "_partials/_footerprofil.html.twig" %}
+		{% else %}
+			{% include "_partials/_footer.html.twig" %}
+		{% endif %}
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+		<script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+		<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+		<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+		<script src="{{asset('assets/js/jquery-1.11.0.min.js')}}"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+
+
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+
+		<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+		<script src="{{asset('assets/js/jquery.autocomplete.min.js')}}"></script>
+		<script src="{{asset('assets/js/jquery.placeholder.js')}}"></script>
+		<script src="{{asset('assets/js/locations-autocomplete.js')}}"></script>
+		<script src="{{asset('assets/js/bootstrap-datepicker.js')}}"></script>
+		<script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
+		<script src="{{asset('assets/js/gmap3.min.js')}}"></script>
+
+
+		<!--[if !(gte IE 8)]><!-->
+		<script src="{{asset('assets/js/wow.min.js')}}"></script>
+		<script>
+			// Initialize WOW
+// -------------------------------------------------------------
+new WOW({mobile: false}).init();
+		</script>
+		<!--<![endif]-->
+
+		<script src="{{asset('assets/js/custom.js')}}"></script>
+		<script src="{{asset('assets/js/map.js')}}"></script>
+	</body>
+</html></body></html>

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Ajouter Driver
+{% endblock %}
+
+{% block body %}
+
+	<section class="container" style="text-align:start;">
+		<div class="row">
+
+			<div class="col-md-5">
+
+				<h1>Votre pérmis de conduit</h1>
+				<br>
+				{{ form_start(driverForm) }}
+				<div class="mb-3">
+					{{ form_row(driverForm.license) }}
+					{# {{ form_row(driverForm.vehicule) }}  #}
+					{# {{ form_row(driverForm.user) }}  #}
+
+					{# {{ form_row(driverForm.disponibility) }} #}
+					<br>
+					{{ form_row(driverForm.enregistrer) }}
+
+
+					{{ form_end(driverForm) }}
+
+				<br>
+				</div>
+
+			<br>
+		</div>
+
+	</div>
+	</section>
+	<br><div>
+		<br>
+	<br>
+</div>{% endblock %}

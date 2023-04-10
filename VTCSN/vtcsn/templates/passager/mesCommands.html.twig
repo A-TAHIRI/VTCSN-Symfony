@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Mes Command
+{% endblock %}
+
+{% block body %}
+
+
+	<main class="container">
+		<div class="row">
+			<h1>Commandes de{{ user.surName }}</h1>
+
+			{% for ride in  rides %}
+
+
+				<fieldset class=" col-ms-12 col-md-5 col-lg-3 ">
+
+					<div class="card h-100">
+
+						<div class="card-body">
+							<h5 class="card-title">Trajet faie le :{{ride.createdAt |date('d-m-y')}}
+							</h5>
+							<p class="card-text">De :
+								{{ride.rendezVous}}</p>
+							<p class="card-text">Ver :
+								{{ride.destination}}</p>
+						</div>
+					</div>
+
+				</fieldset>
+
+
+			{% endfor %}
+
+
+		</main>
+	{% endblock %}
