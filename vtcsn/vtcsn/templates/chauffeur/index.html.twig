@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil
+{% endblock %}
+
+{% block body %}
+	<h2>Bienvenue Dans Votre Profil Chère Chauffeur</h2>
+	<div class="container-fluid profil  ">
+		<div class="row  justify-content-center   ">
+			<fieldset class="col-sm-12 col-md-3  ">
+				<div class="cardh-100">
+					<br>
+					<strong class="strong">Bienvenue dans votre espace personnel,pour demander une cours appuyer sur  le lien ci-dessous</strong>
+					<br>
+					<br>
+					<br>
+					<br>
+					<a href="{{path('chauffeur_newCours')}}" class="btn btn-warning btn-ld my-3 " style=" border-radius: 15px;width:100%;">Demmander une cours</a>
+				</div>
+
+
+			</fieldset>
+
+		</div>
+
+	</div>
+{% endblock %}

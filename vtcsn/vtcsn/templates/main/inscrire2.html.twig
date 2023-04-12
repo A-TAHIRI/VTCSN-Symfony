@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block title %}Profil
+{% endblock %}
+
+{% block body %}
+	<h2>Bienvenue Dans L'éspace  passager</h2>
+	<div class="container-fluid profil">
+
+
+		<div class="row justify-content-center">
+
+			<fieldset class="col-ms-12 col-md-5 col-lg-3 ">
+				<div class="cardh-100">
+
+					<strong class="strong">PASSAGERS, NE VOUS PRIVEZ PLUS D'UN CHAUFFEUR PRIVÉ</strong>
+					<br>
+					<br>
+					<p>Vtcsn vous accompagne pour vos déplacements à à toutes les villes du sénégal et vous propose un large choix de gammes de véhicules.</p>
+					<br>
+					<a class=" btn btn-warning  btn-ld my-3" href=" {{path('app_login')}}" style=" border-radius: 15px;width:100% ">connéctez-vous pour demander un trajet</a>
+					<a class=" btn btn-danger  btn-ld my-3" href=" {{path('app_register')}}" style=" border-radius: 15px;width:100% ">inscririvez-vous pour demander un trajet</a>
+
+
+				</div>
+			</fieldset>
+
+
+		</div>
+
+	</div>
+{% endblock %}

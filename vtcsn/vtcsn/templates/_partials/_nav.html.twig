@@ -1,0 +1,154 @@
+<header>
+	<nav class="navbar fixed-top  navbar-expand-lg bg-body-tertiary center-right ">
+		<div class="container-fluid ">
+			<a class="scroll-to" href="{{path('app_main')}}"><img class="img-responsive" src="{{asset('assets/images/VTCSN2.png ')}}" width="100px" higth="70px" alt="VTC.SN"></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse " id="navbarNavDropdown">
+				<ul class="navbar-nav ms-auto  ">
+
+					{% if app.user %}
+						{% if is_granted('ROLE_ADMIN') %}
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a class="dropdown-item" href="{{path('app_login')}}">Administration</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="#">Setting</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="{{path('app_logout')}}">Logout</a>
+									</li>
+								</ul>
+							</li>
+						{% else %}
+							{%  if is_granted('ROLE_DRIVER') %}
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">My account</a>
+									<ul class="dropdown-menu">
+										<li>
+											<a class="dropdown-item" href="{{path('chauffeur_index')}}">New Ride</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="{{path('chauffeur_profil',{'id': app.user.id})}}">Profile</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="{{path('chauffeur_mesCours')}}">My Ride</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="">My car</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="{{path('rating_driver')}}">My reviews</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="{{path('contact.index')}}">Contact us</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="">FQ</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="">My banking information</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="">My Documents</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="{{path('driver_modePassager')}}">Switch to passenger mode</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="{{path('app_logout')}}">Logout</a>
+										</li>
+									</ul>
+								</li>
+							{% elseif is_granted('ROLE_PASSAGER')  %}
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">My account</a>
+									<ul class="dropdown-menu">
+										<li>
+											<a class="dropdown-item" href="{{path('passager_index')}}">New Ride</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="{{path('chauffeur_profil',{'id': app.user.id})}}">Profile</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="{{path('passager_mesCommands',{'id': app.user.id})}}">My Ride</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="{{path('rating_passager')}}">My reviews</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="{{path('contact.index')}}">Contact us</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="#">FQ</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="#">My banking information</a>
+										</li>
+										{% if app.user.drivers| filter (a => a.id )|length > 0 %}
+											<li>
+												<a class="dropdown-item" href="{{path('driver_modeDriver')}}">Switch to driver mode</a>
+											</li>
+										{%  else %}
+											<li>
+												<a class="dropdown-item" href="{{path('vehicule_add')}}">Become a Driver</a>
+											</li>
+										{% endif %}
+										<li>
+											<a class="dropdown-item" href="{{path('app_logout')}}">Logout</a>
+										</li>
+									</ul>
+								</li>
+
+							{% endif %}
+						{% endif %}
+					{% else %}
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="{{path('app_main')}}">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{path('app_services')}}">Services</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{path('app_inscri')}}">Passenger</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{path('app_inscription')}}">Driver</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{path('contact.index')}}">Contact</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Login
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a class="dropdown-item" href="{{path('app_login')}}">Connexion</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="{{path('app_register')}}">Inscription</a>
+								</li>
+							</ul>
+						</li>
+
+
+					{% endif %}
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<style>
+		.center-right {
+			margin-left: auto;
+			display: flex;
+			justify-content: center;
+			padding: 40px;
+		}
+	</style>
+</header>
