@@ -39,6 +39,20 @@ class RatingRepository extends ServiceEntityRepository
         }
     }
 
+    public function findTrajetsByRide( $user): array
+    {
+        $query = $this->createQueryBuilder('c')
+            ->innerJoin('c.raide', 't')
+            ->andWhere('t = :user')
+            //->andWhere('u.roles = :role')
+            ->setParameter('user', $user)
+           // ->setParameter('role', 'ROLE_PASSAGER')
+            ->getQuery();
+    
+        return $query->getResult();
+    }
+
+
 //    /**
 //     * @return Rating[] Returns an array of Rating objects
 //     */
