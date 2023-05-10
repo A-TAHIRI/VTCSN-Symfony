@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}My reviews
+{% endblock %}
+
+{% block body %}
+
+	
+<div class="container col-md-3">
+	<div class="row justify-content-center content">		
+		<h1 class="title text-center">review<div class="clearfix"></div> </h1>
+			<div id="reviews" class="tableReview">
+			<!-- Les reviews seront insérées ici par JavaScript -->
+			</div>
+			<nav>
+				<ul class="pagination">
+					<li class="page-item">
+						<button class="page-link" id="previous" onclick="changePage(-1)">&laquo;</button>
+					</li>
+					<li class="page-item">
+						<button class="page-link" id="next" onclick="changePage(1)">&raquo;</button>
+					</li>
+				</ul>
+			</nav>
+	</div>
+</div>
+
+<script>
+
+let ratings = [{% for rating in ratings %}{
+            note: {{ rating.note }},
+            commentary: "{{ rating.commentary }}"
+        }, {% endfor %}];
+    
+        let currentPage = 0;
+        const reviewsPerPage = 5;
+    
+        function displayReviews() {
+            let start = currentPage * reviewsPerPage;
+            let end = start + reviewsPerPage;
+    
+            let reviewsHtml = `
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Note</th>
+                        <th scope="col">Commentary</th>
+						<th scope="col">image</th>
+                    </tr>
+                </thead>
+                <tbody>
+            `;
+    
+            for (let i = start; i < end && i < ratings.length; i++) {
+                let rating = ratings[i];
+                reviewsHtml += `<tr>
+                    <td>`;
+                for (let j = 1; j <= 5; j++) {
+                    if (j <= rating.note) {
+                        reviewsHtml += '<span class="bi bi-star-fill text-warning"></span>';
+                    } else {
+                        reviewsHtml += '<span class="bi bi-star"></span>';
+                    }
+                }
+                reviewsHtml += `</td>
+                    <td>${rating.commentary}</td>
+					<td>{% if app.user.genre == 'F' %}
+							<img src="{{ asset('assets/images/femme1.jpg') }}" height="100" width="100" class="imag-secrl">
+
+
+						{% else %}
+							<img src="{{ asset('assets/images/homme2.jpg') }}" height="100" width="100" class="imag-secrl">
+
+
+						{% endif %}</td>
+                </tr>`;
+            }
+    
+            reviewsHtml += `</tbody>
+            </table>`;
+            document.getElementById("reviews").innerHTML = reviewsHtml;
+            updatePaginationButtons();
+        }
+    
+        function updatePaginationButtons() {
+            document.getElementById("previous").disabled = currentPage === 0;
+            document.getElementById("next").disabled = (currentPage + 1) * reviewsPerPage >= ratings.length;
+        }
+    
+        function changePage(direction) {
+            currentPage += direction;
+            displayReviews();
+        }
+    
+        displayReviews();
+</script>
+
+
+{% endblock %}

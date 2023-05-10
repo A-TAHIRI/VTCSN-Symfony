@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	<h5>Vehicule of
+		{{ app.user.surName }}</h5>
+{% endblock %}
+
+{% block body %}
+
+	<div class=" content spaceBetween">
+		<div class="text-center">
+			<h1 class="titleContact text-center">My Car
+				<div class="clearfixTitle"></div>
+			</h1>
+
+		</div>
+		{% for vehicule in vehicules %}
+			<div class="container ">
+				<table>
+					<thead>
+						<tr>
+							<th>Vehicule</th>
+							<th>info</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">Brand</th>
+							<td>{{ vehicule.brand }}</td>
+
+						</tr>
+						<tr>
+							<th>Energie</th>
+							<td>{{ vehicule.energie }}</td>
+						</tr>
+						<tr>
+							<th scope="row">Brand</th>
+							<td>{{ vehicule.color }}</td>
+
+						</tr>
+						<tr>
+							<th>Energie</th>
+							<td>{{ vehicule.model }}</td>
+						</tr>
+						<tr>
+							<th scope="row">Brand</th>
+							<td>{{ vehicule.brand }}</td>
+
+						</tr>
+						<tr>
+							<th>Picture</th>
+							<td><img src="{{ asset('assets/uploads/' ~ vehicule.image) }}" alt="{{ vehicule.brand }} {{ vehicule.model }} " style="height: 170px;"/></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	{% endfor %}
+	{# <div class="container spaceBetween d-flex ">
+	
+			<a href="{{path('vehicule_add')}}" class="btn submitMessage btnCustom">Add a new vehicule</a>
+		</div> #}
+
+{% endblock %}

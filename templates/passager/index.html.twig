@@ -1,0 +1,56 @@
+{# {% extends 'base.html.twig' %}
+
+{% block title %}Profil
+{% endblock %}
+
+{% block body %}
+
+	<div class="container-fluid profil">
+
+		<div class="row justify-content-center">
+
+			<fieldset class=" col-ms-12 col-md-5 col-lg-3 register  ">
+				<div class="cardh-100">
+
+					<strong class="strong">Bienvenue dans votre espace personnel,pour demander un trajet appuyer sur  le lien ci-dessous</strong>
+					<br>
+					<br>
+					<br>
+					<br>
+					<a class="btn btn-primary btn-ld" href="{{path('passager_newCommand', {'id':app.user.id})}}" style=" border-radius: 15px;width:98%;">
+						Passer la command de trajet</a>
+
+				</div>
+
+			</fieldset>
+
+		</div>
+	</div>
+{% endblock %} #}
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Passenger menu
+{% endblock %}
+
+{% block body %}
+
+	<div class="container profil content ">
+		<h1 class="titleContact text-center ">Menu<div class="clearfixTitle"></div>
+		</h1>
+		<div class="row  justify-content-center">
+
+			<div class="col-md-4">
+				<a class="btn submitMessage btnCustom w-100 mb-2" href="{{path('passager_profil', {'id':app.user.id})}}">My profil</a>
+				<a class="btn submitMessage btnCustom w-100 mb-2" href="{{path('passager_mesCommands', {'id':app.user.id})}}">My order</a>
+				<a class="btn submitMessage btnCustom w-100 mb-2" href="{{path('passager_edit', {'id':app.user.id})}}">Modify my profil</a>
+				{# <a class="btn submitMessage btnCustom" href="{{path('passager_suivreCommande', {'id':app.user.id})}}" >Follow my order</a> #}
+				<a class="btn submitMessage btnCustom w-100 mb-2" href="{{path('rating_driver', {'id':app.user.id})}}">My review</a>
+				<a class="btn submitMessage btnCustom w-100 mb-2" href="{{path('passager_newCommand', {'id':app.user.id})}}">Order a new ride</a>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}

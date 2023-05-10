@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription
+{% endblock %}
+
+{% block body %}
+	<div class="lightGreyBar spaceBetween content">
+		<h1 class="text-center service-title spaceBetween">registration
+		</h1>
+		<div class="clearfix"></div>
+	</div>
+
+	<div class="container   ">
+		{{ form_start(registrationForm) }}
+		<div class="row ">
+
+			<div class="col-sm-12 col-md-6 ">
+
+
+				<legend>Mon identité</legend>
+				{{ form_row(registrationForm.genre ) }}
+				{{ form_row(registrationForm.name) }}
+				{{ form_row(registrationForm.surname) }}
+				{{ form_row(registrationForm.email) }}
+				{{ form_row(registrationForm.phoneNumber) }}
+
+			</div>
+			<div class="col-sm-12 col-md-6  ">
+				<legend>Mes coordonnées</legend>
+				{{ form_row(registrationForm.address) }}
+				{{ form_row(registrationForm.zipcode) }}
+				{{ form_row(registrationForm.city) }}
+				{{ form_row(registrationForm.plainPassword ) }}
+				{{ form_row(registrationForm.RGBDConsent) }}
+
+			</div>
+
+			<div>
+				<button type="submit" class="btn btn-danger btn-lg my-3" style=" border-radius: 10px; ">Register</button>
+				<a href="{{path('app_login')}}" class="btn btn-danger btn-lg my-3" style=" border-radius: 10px; ">Login</a>
+				{{ form_end(registrationForm) }}
+			</div>
+
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,427 @@
+
+
+.form-control{
+	background-color:#dad5d6;
+	
+	border-radius: 15px;
+}
+.form-control-message{
+	height: 200px;
+}
+
+.button{
+	margin: 10px 0px;
+	margin-left: 40%;
+	border-radius: 15px;
+
+}
+.button a{
+
+	text-decoration: none;
+	color: #fff;
+	font-size: x-large;
+	
+}
+img.imag-secrl{
+	border-radius: 50%;
+	margin: 5px 5px;
+}
+div.rating{
+  border:5px solid  #716d6e;
+  margin: 2px;
+  border-radius: 10px;
+  color: #c61334;
+	
+}
+           
+h2{
+  text-align: center;
+    }
+	.register{
+		margin: 50px 0px;
+		/* text-align: center; */
+	
+	}
+  fieldset {
+      
+      background-color: #fff;
+      margin: 0px 50px;
+      height: 500px;
+	  padding-top: 30px;
+      border-radius: 10px;
+      /* border-style: solid;
+      border-width: 5px;
+      border-color: red;
+      */
+    }
+    .connexion{
+  
+  padding-bottom: 40px;
+    }
+    
+	.strong{
+     font-size: xx-large;
+	 color: #c61334;
+  
+	}
+	
+
+
+      
+    
+
+
+   /* principale color */
+/* grey dark : rgba(58,60,60,255)
+       Hex : #3a3c3c 
+grey light: rgba(72,74,74,255)
+       Hex : #484a4a
+red :       rgba(198,19,52,255)
+       Hex : #c61334 */
+
+
+     /* navigation */
+
+
+.center-right {
+	margin-left: auto;
+	display: flex;
+	justify-content: center;
+	padding: 40px;
+}
+/* Ajoutez une marge en haut pour éviter que la navbar ne chevauche le contenu */
+.content {
+	margin-top: 100px; 
+  }
+  @media (max-width: 991.98px) {
+	.content {
+	  margin-top: 50px; 
+	}
+  }
+
+
+
+
+	/* mainpage */
+
+
+html,body{
+ color: grey;
+	margin:0;
+	padding:0;
+	height: 100%;
+	
+}
+#main-content {
+	flex: 1;
+}
+.greyBar{
+
+  background: rgb(72,74,74);
+ background: linear-gradient(0deg, rgba(72,74,74,1) 57%, rgba(58,60,60,1) 100%); 
+}
+.lightGreyBar{
+ background-color: rgba(204,204,204,255);
+ padding: 50px;
+}
+.title{
+ padding: 40px;
+ 
+}
+.clearfixTitle{
+	background-color:rgba(198,19,52,255);
+ display: flex;
+ height: 5px;
+	width: 200px;
+	margin: auto ;
+	
+}
+.carrouselCustom{
+	margin-top: 100px; 
+	margin-bottom: 100px;
+}
+@media (max-width: 991.98px) {
+.carrouselCustom {
+ margin-top: 50px; 
+ margin-bottom: 50px;
+}
+}
+.cardCustom{
+ padding: 40px;
+}
+.plusCustom{
+ color:rgba(198,19,52,255);
+}
+.service-title{
+ font-weight: bold;
+}
+.service-content{
+ font-size:17px;
+}
+.redBand{
+ background-color: rgba(198,19,52,255);
+ padding: 50px;
+}
+.subtitle{
+ color: white;
+ align-item: center;
+}
+.flex-container {
+display: flex;
+justify-content: center; /* Alignement horizontal */
+align-items: center; /* Alignement vertical */
+}
+.list-group{
+ cursor: pointer;
+}
+.vehiculeUl{
+ background-color:white;
+ border-radius: 5px;
+ border: solid 1px;
+}
+.vehicule-liste{
+ margin: 20px;
+ padding: 5px;
+ 
+}
+.spaceBetween{
+ margin-top:70px;
+ margin-bottom:70px;
+}
+.video-responsive { 
+overflow:hidden; 
+padding-bottom:56.25%; 
+position:relative; 
+height:0;
+}
+.video-responsive iframe {
+left:0; 
+top:0; 
+height:100%;
+width:100%;
+position:absolute;
+}
+.titleInfoTour{
+ display:flex;
+ justify-content: center;
+ margin:40px;
+}
+.imgSpace{
+ padding:40px;
+}
+.titleContact{
+ padding:60px;
+}
+.titleContact{
+ font-weight: bold;
+ font-size: 40px;
+}
+.highlight{
+ color: red;
+}
+.address{
+ font-weight: bold;
+ font-size: 18px;
+}
+.text-field{
+ background-color: rgba(204,204,204,255);
+}
+.form-group{
+ padding:10px;
+}
+.message{
+ height: 300px;
+}
+.submitMessage{
+ background-color:rgba(198,19,52,255);
+ color: white;
+ font-weight: bold;
+ font-size: 25px;
+}
+.btn:hover{
+ background-color: rgba(204,204,204,255);
+}
+input:hover{
+ background-color: white;
+}
+.contactBoxName{
+ font-weight: bold;
+ font-size: 20px;
+}
+.clearfix{
+ background-color:rgba(198,19,52,255);
+ display: flex;
+ height: 5px;
+}       
+/* -------------------------Registration form -----------------------*/
+.footerContact{
+	margin-bottom: 180px;
+} 
+@media (max-width: 991.98px) {
+	.footerContact{
+	  margin-bottom: 60px; 
+	}
+}
+/* -------------------------Registration form -----------------------*/
+
+
+
+.registrationForm{
+	font-weight:bold;
+}
+.custom-label{
+	color:black
+}
+
+
+/*-------------------------- Log in-------------------------- */
+
+
+
+.loginMargin{
+	margin-bottom: 80px; 
+}
+	@media (max-width: 991.98px) {
+.loginMargin {
+ margin-bottom: 50px; 
+}
+}
+
+.forgotPass{
+	text-decoration: none;
+	margin: 50px;
+}
+
+/*-------------------------- profil-------------------------- */
+ .profil{
+	margin-top:300px;
+	margin-bottom:300px;
+} 
+
+/*-------------------------- car table-------------------------- */
+
+table{
+	border-collapse: collapse;
+	border: 2px solid black;
+	letter-spacing: 1px;
+	margin: 0 auto;
+	min-height:auto;
+	min-width: auto;
+}
+
+tbody {
+	background-color:rgb(212, 211, 211);
+	color: black;
+}
+thead,
+tfoot {
+	background-color: rgba(198,19,52,255);
+	color: #fff;
+}
+td,
+th {
+	border: 1px solid rgb(10, 10, 10);
+	padding: 5px 10px;
+}
+
+td {
+	text-align: center;
+}
+.btnCustom{
+	margin: 0 auto;
+}
+/* -----------------------------review------------------------------- */
+
+
+.tableReview{
+	width: 500px;
+} @media (max-width: 991.98px) {
+	.tableReview {
+	  width: auto; 
+	}
+}
+
+
+.btnCustom{
+   margin: 10px;
+   width: auto;
+}
+
+/* Footer
+--------------------------------------------*/
+
+ footer {
+	background-color: #c61334; 
+   padding: 0px;
+	height: auto;
+	margin-bottom: 0px; 
+	margin-top: 50px;
+	text-align: center;
+	height: 100px;
+}
+
+.scroll-to{
+	color:white !important;
+}
+.footer  li {
+	list-style: none;
+	text-align: center;
+
+	color: #fff;
+	display: inline-block;
+	padding: 5px 0px 0px 0px;
+	margin-top: 10px;
+	margin-left: 30px;
+	
+	
+  }
+  .footer li a {
+
+	text-decoration: none;
+	color: #fff;
+	
+	
+  } 
+  .containerbody {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+} 
+
+.contento{
+	flex: 1 0 auto;
+}
+
+
+/*
+.footer {
+	background-color: #c61334;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+	padding: 10px 0;
+	height: 100px;
+}
+
+.footer ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+.footer li {
+	margin: 0 10px;
+}
+
+.footer a {
+	color: white;
+	text-decoration: none;
+}
+
+.footer a:hover {
+	text-decoration: underline;
+}
+  

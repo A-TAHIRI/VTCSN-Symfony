@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in
+{% endblock %}
+
+{% block body %}
+
+	{% if error %}
+		<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+	{% endif %}
+	<div class="container  loginMargin content">
+		<div class="row   justify-content-center   ">
+			<div class="col-sm-12 col-md-6 spaceBetween ">
+				<h1 class="  text-center titleContact">
+					Connexion
+					<div class="clearfix"></div>
+				</h1>
+				<div class="justify-content-center d-flex">
+					<img src="{{asset('assets/images/admin.png')}}" width="100" height="100" alt="profilPicture">
+				</div>
+				<hr>
+				<form method="post">
+					<div class="form-group">
+						<label for="email">E-mail address</label>
+						<input value="{{ last_username }}" required name="email" type="text" class="form-control text-field" id="email" aria-describedby="emailHelp" placeholder="Enter your e-mail adress">
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input name="password" type="password" class="form-control text-field" id="password" placeholder="Enter your password">
+					</div>
+					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+					<div class="text-center spaceBetween">
+						<button type="submit" style="width: 98%" class="btn submitMessage">Log in</button>
+						<div class="spaceBetween">
+							<a class="spaceBetween forgotPass" href="{{ path('forgotten_password') }}">
+								Forgot your password ?
+							</a>
+						</div>
+					</div>
+				</form>
+				<hr>
+				<div class="text-center">
+
+					<a href="{{path('app_register')}}" style="width: 98%" class="btn submitMessage">
+						Register
+					</a>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

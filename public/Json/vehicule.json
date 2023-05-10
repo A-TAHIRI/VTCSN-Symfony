@@ -1,0 +1,34 @@
+[
+    {
+        "type": "Berline",
+        "nombreDePlaces": 5,
+        "energie": "Essence",
+        "image": "bmw.png",
+        "anneeDeConstruction": 2018,
+        "description": "La berline est idéale pour les trajets quotidiens en ville et les longs voyages en famille. Elle offre un confort et une sécurité supérieurs, ainsi qu'un espace de rangement généreux."
+    },
+    {
+        "type": "SUV",
+        "nombreDePlaces": 5,
+        "energie": "Diesel",
+        "image": "audi.png",
+        "anneeDeConstruction": 2020,
+        "description": "Le SUV est parfait pour ceux qui recherchent un véhicule polyvalent, adapté aux terrains accidentés et aux conditions météorologiques difficiles. Il offre une position de conduite surélevée et un espace intérieur spacieux."
+    },
+    {
+        "type": "Coupé",
+        "nombreDePlaces": 2,
+        "energie": "Essence",
+        "image": "peugeot.png",
+        "anneeDeConstruction": 2019,
+        "description": "Le coupé est un choix idéal pour les amateurs de sport automobile et de conduite dynamique. Il offre une esthétique élégante et des performances impressionnantes, bien que l'espace intérieur soit limité."
+    },
+    {
+        "type": "Électrique",
+        "nombreDePlaces": 5,
+        "energie": "Électrique",
+        "image": "mercedes(1).png",
+        "anneeDeConstruction": 2021,
+        "description": "Les véhicules électriques sont une solution écologique et économique pour la mobilité urbaine. Ils émettent zéro émission et offrent un coût d'exploitation réduit par rapport aux véhicules à combustion interne."
+    }
+]
